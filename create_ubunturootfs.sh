@@ -6,4 +6,5 @@ dd if=/dev/zero of=disk.img bs=5G count=10
 mkfs.ext4 disk.img
 sudo mount disk.img /mnt
 tar xvf ubuntu-base-20.04.1-base-amd64.tar.gz -C /mnt
+find /mnt -print0 | cpio --null -ov --format=newc | gzip -9 > initramfs.cpio.gz
 sudo umount /mnt
