@@ -2,7 +2,7 @@
 #
 wget https://cdimage.ubuntu.com/ubuntu-base/releases/20.04/release/ubuntu-base-20.04.1-base-amd64.tar.gz
 
-dd if=/dev/zero of=disk.img bs=5G count=10
+dd if=/dev/zero of=rootfs.img bs=1024 count=10M
 mkfs.ext4 disk.img
 sudo mount disk.img /mnt
 tar xvf ubuntu-base-20.04.1-base-amd64.tar.gz -C /mnt
